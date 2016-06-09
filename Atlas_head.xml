@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<leg name="head" segmentNo="1" jointNo="1">
+
+	<link id="1">
+		<inertial>
+			<mass value="1.4199"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.05 0.05 0.05"/>
+			</geometry>
+		</collision>
+		<visualization>
+ 			<model3ds filename="../../resources/Atlas_Model/head.3ds" scale="25.4 25.4 25.4" xyz="0 -0.01 0" rpy="0 0 0"/>
+ 		</visualization>
+	</link>
+
+	
+<!--
+	**********************************************************************
+					JOINT
+	**********************************************************************
+-->
+
+  	<joint name="pelvis_ltorso" type="revolute">
+		<origin xyz="0 0 0" rpy="0 0 1.5707"/>
+		<parent link="0"/>
+		<child link="1"/>
+		<limit lower="-0.602139" upper="1.14494" />
+	</joint>
+</leg>

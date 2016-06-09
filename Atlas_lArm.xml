@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<leg name="lArm" segmentNo="6" jointNo="6">
+
+	<link id="1">
+		<inertial>
+			<mass value="3.45"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.035 0.04" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.03 0.07 0.03"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_clav.3ds" scale="25.4 25.4 25.4" xyz="0 -0.11 -0.07" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	<link id="2">
+		<inertial>
+			<mass value="3.012"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.12 0.08" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.03 0.08 0.03"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_scap.3ds" scale="25.4 25.4 25.4" xyz="0 -0.015 -0.06" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	<link id="3">
+		<inertial>
+			<mass value="3.388"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.22 0.07" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.025 0.055 0.025"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_uarm.3ds" scale="25.4 25.4 25.4" xyz="0 0 -0.04" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	<link id="4">
+		<inertial>
+			<mass value="2.509"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.31 0.07" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.03 0.08 0.03"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_larm.3ds" scale="25.4 25.4 25.4" xyz="0 0 -0.06" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	<link id="5">
+		<inertial>
+			<mass value="3.388"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.41 0.065" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.03 0.05 0.03"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_farm.3ds" scale="25.4 25.4 25.4" xyz="0 0 -0.05" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	<link id="6">
+		<inertial>
+			<mass value="2.509"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 0.49 0.07" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.03 0.06 0.03"/>
+			</geometry>
+		</collision>
+		<visualization>
+			<model3ds filename="../../resources/Atlas_Model/l_hand.3ds" scale="25.4 25.4 25.4" xyz="0 0 -0.05" rpy="0 0 0"/>
+		</visualization>
+	</link>
+	
+<!--
+	**********************************************************************
+					JOINT
+	**********************************************************************
+-->
+
+  	<joint name="pelvis_lclav" type="revolute">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="0"/>
+		<child link="1"/>
+		<limit lower="-1.5708" upper="0.785398" />
+	</joint>
+	<joint name="lclav_lscap" type="revolute">
+		<origin xyz="0 0.06 0.06" rpy="0 0 0"/>
+		<parent link="1"/>
+		<child link="2"/>
+		<limit lower="-1.5708" upper="1.5708" />
+	</joint>
+	<joint name="lscap_luarm" type="revolute">
+		<origin xyz="0 0.18 0.08" rpy="0 0 1.5707"/>
+		<parent link="2"/>
+		<child link="3"/>
+		<limit lower="0" upper="3.14159" />
+	</joint>
+	<joint name="luarm_llarm" type="revolute">
+		<origin xyz="0 0.25 0.07" rpy="0 0 0"/>
+		<parent link="3"/>
+		<child link="4"/>
+		<limit lower="0" upper="2.35619" />
+	</joint>
+	<joint name="llarm_lfarm" type="revolute">
+		<origin xyz="0 0.37 0.06" rpy="0 0 1.5707"/>
+		<parent link="4"/>
+		<child link="5"/>
+		<limit lower="0" upper="3.14159" />
+	</joint>
+	<joint name="lfarm_lhand" type="revolute">
+		<origin xyz="0 0.44 0.07" rpy="0 0 0"/>
+		<parent link="5"/>
+		<child link="6"/>
+		<limit lower="-1.1781" upper="1.1781" />
+	</joint>
+</leg>

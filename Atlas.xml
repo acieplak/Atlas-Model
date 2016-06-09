@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<robot name="Atlas" legsNo="6">
+	<robotBody name="body">
+		<inertial>
+			<mass value="17.882"/>
+		</inertial>
+		<collision>
+			<origin xyz="0 2 0" rpy="0 0 0"/>
+			<geometry>
+				<box xyz="0.2 0.1 0.13"/>
+			</geometry>
+			<material name="Cyan">
+				<color r="0" g="1.0" b="1.0"/>
+			</material>
+		</collision>
+ 		<visualization>
+ 			<model3ds filename="../../resources/Atlas_Model/pelvis.3ds" scale="25.4 25.4 25.4" xyz="0 0 0" rpy="0 0 0"/>
+ 		</visualization>
+	</robotBody>
+
+<!--
+	**********************************************************************
+					LEGS
+	**********************************************************************
+-->
+
+<!-- ***   TORSO   *** -->
+	<leg type="antropomorph" config="Atlas_torso.xml">
+		<attach xyz="-0.0125 0 0.1" rpy="0 0 0"/>
+	</leg>
+
+<!-- ***   LEGS   *** -->
+	<leg type="antropomorph" config="Atlas_lLeg.xml">
+		<attach xyz="0 0.09 0" rpy="0 0 0"/>
+	</leg>
+	<leg type="antropomorph" config="Atlas_rLeg.xml">
+		<attach xyz="0 -0.09 0" rpy="0 0 0"/>
+	</leg>
+
+<!-- ***   ARMS   *** -->
+	<leg type="antropomorph" config="Atlas_lArm.xml">
+		<attach xyz="0.03 0.125 0.3" rpy="0 0 0"/>
+	</leg>
+	<leg type="antropomorph" config="Atlas_rArm.xml">
+		<attach xyz="0.03 -0.125 0.3" rpy="0 0 0"/>
+	</leg>
+
+<!-- ***   HEAD   *** -->
+	<leg type="antropomorph" config="Atlas_head.xml">
+		<attach xyz="0.13 0 0.53" rpy="0 0 0"/>
+	</leg>
+</robot>
+
