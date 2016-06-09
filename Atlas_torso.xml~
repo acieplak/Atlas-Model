@@ -35,13 +35,13 @@
 			<mass value="52.007"/>
 		</inertial>
 		<collision>
-			<origin xyz="0.03 0 0.23" rpy="0 0 0"/>
+			<origin xyz="0.03 0 0.28" rpy="0 0 0"/>
 			<geometry>
-				<box xyz="0.18 0.15 0.32"/>
+				<box xyz="0.18 0.15 0.22"/>
 			</geometry>
 		</collision>
 		<visualization>
- 			<model3ds filename="../../resources/Atlas_Model/utorso.3ds" scale="25.4 25.4 25.4" xyz="-0.027 -0.16 0" rpy="0 0 0"/>
+ 			<model3ds filename="../../resources/Atlas_Model/utorso.3ds" scale="25.4 25.4 25.4" xyz="-0.027 -0.21 0" rpy="0 0 0"/>
  		</visualization>
 	</link>
 
